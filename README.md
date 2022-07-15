@@ -1,6 +1,6 @@
-# pkg-name
+# vite-plugin-version
 
-[![NPM version](https://img.shields.io/npm/v/pkg-name?color=a1b858&label=)](https://www.npmjs.com/package/pkg-name)
+[![NPM version](https://img.shields.io/npm/v/vite-plugin-version?color=a1b858&label=)](https://www.npmjs.com/package/vite-plugin-version)
 
 ## License
 
