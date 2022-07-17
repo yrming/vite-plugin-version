@@ -7,20 +7,25 @@ importers:
       '@antfu/eslint-config': ^0.25.2
       '@antfu/ni': ^0.16.3
       '@antfu/utils': ^0.5.2
+      '@types/debug': ^4.1.7
       '@types/node': ^18.0.3
       bumpp: ^8.2.1
+      debug: ^4.3.4
       eslint: ^8.19.0
       esno: ^0.16.3
       pnpm: ^7.5.0
       rimraf: ^3.0.2
       typescript: ^4.7.4
       unbuild: ^0.7.4
-      vite: ^2.9.14
+      vite: ^3.0.0
       vitest: ^0.18.0
+    dependencies:
+      debug: 4.3.4
     devDependencies:
       '@antfu/eslint-config': 0.25.2_4x5o4skxv6sl53vpwefgt23khm
       '@antfu/ni': 0.16.3
       '@antfu/utils': 0.5.2
+      '@types/debug': 4.1.7
       '@types/node': 18.0.3
       bumpp: 8.2.1
       eslint: 8.19.0
@@ -29,8 +34,16 @@ importers:
       rimraf: 3.0.2
       typescript: 4.7.4
       unbuild: 0.7.4
-      vite: 2.9.14
+      vite: 3.0.0
       vitest: 0.18.0
+
+  playground:
+    specifiers:
+      typescript: ^4.6.4
+      vite: ^3.0.0
+    devDependencies:
+      typescript: 4.7.4
+      vite: 3.0.0
 
 packages:
 
@@ -556,6 +569,12 @@ packages:
     resolution: {integrity: sha512-/zPMqDkzSZ8t3VtxOa4KPq7uzzW978M9Tvh+j7GHKuo6k6GTLxPJ4J5gE5cjfJ26pnXst0N5Hax8Sr0T2Mi9zQ==}
     dev: true
 
+  /@types/debug/4.1.7:
+    resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
+    dependencies:
+      '@types/ms': 0.7.31
+    dev: true
+
   /@types/estree/0.0.39:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
@@ -576,6 +595,10 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
+
+  /@types/ms/0.7.31:
+    resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
   /@types/node/18.0.3:
@@ -1042,7 +1065,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-    dev: true
 
   /deep-eql/3.0.1:
     resolution: {integrity: sha512-+QeIQyN5ZuO+3Uk5DYh6/1eKO0m0YmJFGNmFHGACpf1ClL1nmlV/p4gNgbl2pJGxgXb4faqo6UE+M5ACEMyVcw==}
@@ -2482,7 +2504,6 @@ packages:
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
-    dev: true
 
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
@@ -3275,20 +3296,23 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite/2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
-    engines: {node: '>=12.2.0'}
+  /vite/3.0.0:
+    resolution: {integrity: sha512-M7phQhY3+fRZa0H+1WzI6N+/onruwPTBTMvaj7TzgZ0v2TE+N2sdLKxJOfOv9CckDWt5C4HmyQP81xB4dwRKzA==}
+    engines: {node: '>=14.18.0'}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      terser: ^5.4.0
     peerDependenciesMeta:
       less:
         optional: true
       sass:
         optional: true
       stylus:
+        optional: true
+      terser:
         optional: true
     dependencies:
       esbuild: 0.14.48
@@ -3329,12 +3353,13 @@ packages:
       local-pkg: 0.4.1
       tinypool: 0.2.2
       tinyspy: 0.3.3
-      vite: 2.9.14
+      vite: 3.0.0
     transitivePeerDependencies:
       - less
       - sass
       - stylus
       - supports-color
+      - terser
     dev: true
 
   /vue-eslint-parser/9.0.3_eslint@8.19.0:
