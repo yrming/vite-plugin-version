@@ -12,7 +12,9 @@
     "url": "git+https://github.com/yrming/vite-plugin-version.git"
   },
   "bugs": "https://github.com/yrming/vite-plugin-version/issues",
-  "keywords": [],
+  "keywords": [
+    "vite-plugin"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
