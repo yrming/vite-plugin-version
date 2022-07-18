@@ -36,7 +36,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "build": "rimraf dist && unbuild",
     "dev": "unbuild --stub",
     "lint": "eslint .",
     "play": "vite playground",
@@ -45,6 +45,9 @@
     "start": "esno src/index.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vite": "^2.9.0 || ^3.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
