@@ -7,22 +7,20 @@ const debug = _debug('vite-plugin-version')
 
 export interface Options {
   /**
-     * File path of package.json
-     *
-     * @default 'package.json'
-     */
+   * File path of package.json
+   * @default 'package.json'
+   */
   packageJsonPath?: string
   /**
-     * Field name in package.json which is used to represent the version number
-     *
-     * @default 'version'
-     */
+   * Field name in package.json which is used to represent the version number
+   * @default 'version'
+   */
   field?: string
   /**
-     * The name of the file where the version number is stored
-     *
-     * @default 'version.json'
-     */
+   * The name of the file where the version number is stored
+   * After packaging this file will be placed in the dist folder
+   * @default 'version.json'
+   */
   fileName?: string
 }
 
@@ -35,6 +33,7 @@ function vitePluginVersion(options: Options = {}): Plugin {
 
   return {
     name: 'vite-plugin-version',
+    apply: 'build',
     async buildStart() {
       if (!existsSync(packageJsonPath)) {
         debug('package.json not found at %s', packageJsonPath)
@@ -45,10 +44,10 @@ function vitePluginVersion(options: Options = {}): Plugin {
         const packageJson: Record<string, any> = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'))
         const version = packageJson[field]
         if (!version) {
-          debug('no %s field found in package.json, skip', field)
+          debug('no %s field found in package.json', field)
           return
         }
-        debug('%s field found in package.json, skip', field)
+        debug('%s field found in package.json, the value is %s', field, version)
         this.emitFile({
           fileName,
           source: JSON.stringify({
@@ -59,7 +58,7 @@ function vitePluginVersion(options: Options = {}): Plugin {
       }
       catch (e) {
         debug('parse error: %o', e)
-        debug('error on loading package.json at %s, skip', packageJsonPath)
+        debug('error on loading package.json at %s', packageJsonPath)
       }
     },
   }
