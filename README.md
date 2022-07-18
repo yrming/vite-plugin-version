@@ -2,12 +2,18 @@
 
 [![NPM version](https://img.shields.io/npm/v/vite-plugin-version?color=a1b858&label=)](https://www.npmjs.com/package/vite-plugin-version)
 
-Get the `version` information from `package.json`, then put the version file `version.json` in your project dist folder when packaging.
+Get the `version` information from `package.json`, then automatically put the version file `version.json` in your project dist folder when packaging.
 
 ```jsonc
 // package.json
 {
   // ...
+  "version": "0.0.1"
+}
+```
+```jsonc
+// dist/version.json
+{
   "version": "0.0.1"
 }
 ```
