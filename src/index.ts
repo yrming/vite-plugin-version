@@ -41,13 +41,19 @@ function vitePluginVersion(options: Options = {}): Plugin {
       }
 
       try {
-        const packageJson: Record<string, any> = JSON.parse(await fs.readFile(packageJsonPath, 'utf-8'))
+        const packageJson: Record<string, any> = JSON.parse(
+          await fs.readFile(packageJsonPath, 'utf-8'),
+        )
         const version = packageJson[field]
         if (!version) {
           debug('no %s field found in package.json', field)
           return
         }
-        debug('%s field found in package.json, the value is %s', field, version)
+        debug(
+          '%s field found in package.json, the value is %s',
+          field,
+          version,
+        )
         this.emitFile({
           fileName,
           source: JSON.stringify({
