@@ -4,14 +4,14 @@
 
 Get the `version` information from `package.json`, then automatically put the version file `version.json` in your project dist folder when packaging.
 
-```jsonc
+```json
 // package.json
 {
   // ...
   "version": "0.0.1"
 }
 ```
-```jsonc
+```json
 // dist/version.json
 {
   "version": "0.0.1"

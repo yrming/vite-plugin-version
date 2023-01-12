@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["antfu", "bumpp", "esno", "typecheck"],
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": false
+}
